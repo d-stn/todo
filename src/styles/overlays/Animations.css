@@ -1,0 +1,65 @@
+.blur-animation {
+    animation-name: blur;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.appear-animation {
+    animation-name: appear;
+    animation-duration: 0.3s;
+}
+
+.unblur-animation {
+    animation-name: unblur;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.disappear-animation {
+    animation-name: disappear;
+    animation-duration: 0.3s;
+}
+
+@keyframes blur {
+    from {
+        -webkit-backdrop-filter: none;
+    }
+
+    to {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+
+@keyframes appear {
+    from {
+        -webkit-transform: scale(0.05);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes unblur {
+    from {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+
+    to {
+        -webkit-backdrop-filter: none;
+    }
+}
+
+@keyframes disappear {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    to {
+        -webkit-transform: scale(0.05);
+    }
+}

@@ -1,0 +1,31 @@
+.header {
+    background-color: #7f5af0;
+    color: #d3d2d2;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3.2rem;
+    font-weight: 600;
+    padding-left: 1rem;
+}
+
+@media only screen and (max-width: 1150px) {
+    .header {
+        font-size: 2.6rem;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .header {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        font-size: 1.7rem;
+    }
+}
+
+

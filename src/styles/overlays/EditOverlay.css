@@ -1,0 +1,24 @@
+/* 
+    Many components of edit overlay use the styling from add overlay.
+    This is why the code here is so short.
+*/
+
+.edit-overlay {
+    width: 1125px;
+    height: 500px;
+    position: absolute;
+    display: block;
+    background-color: #202025;
+    font-family: "Lata", sans-serif;
+    color: #9eaabb;
+    box-shadow: 0 2rem 4rem rgb(0 0 0 / 60%);
+    transition: 0.3s;
+}
+
+.edit-exit-icon {
+    margin: 1rem;
+}
+
+.edit-overlay-top-row {
+    display: flex;
+}

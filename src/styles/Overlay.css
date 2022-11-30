@@ -1,0 +1,435 @@
+@import "overlays/AddOverlay.css";
+@import "overlays/EditOverlay.css";
+@import "overlays/DetailsOverlay.css";
+@import "overlays/Animations.css";
+
+.overlay-container {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    /*
+    -------------------
+    --- ADD OVERLAY ---
+    -------------------
+    */
+    .add-overlay {
+        width: 945px;
+        height: 520px;
+        transition: 0.3s;
+    }
+
+    .title-input {
+        font-size: 1.8rem;
+    }
+
+    .details-input {
+        font-size: 1.67rem;
+        margin-bottom: 0;
+        height: 10rem;
+    }
+
+    .overlay-header {
+        font-size: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .add-exit-icon {
+        transform: scale(1);
+    }
+
+
+    /*
+    --------------------
+    --- EDIT OVERLAY ---
+    --------------------
+    */
+    .edit-overlay {
+        width: 945px;
+        height: 430px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+
+    /*
+    -------------------
+    --- ADD OVERLAY ---
+    -------------------
+    */
+    .overlay-header {
+        font-size: 2.4rem;
+        height: 2.2rem;
+    }
+
+    .add-overlay {
+        width: 680px;
+        height: 400px;
+    }
+
+    .title-input {
+        font-size: 1.4rem;
+        margin: 1rem 0 0 1rem;
+        padding: 0;
+        height: 2rem;
+    }
+
+    .details-input {
+        margin: 0 0 0 1rem;
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        height: 10rem;
+    }
+
+    .bottom-row-container {
+        margin: 1.2rem;
+    }
+
+    .date-label {
+        font-size: 1.2rem;
+        width: 100px;
+    }
+
+    .date-input {
+        height: 1.4rem;
+        font-size: 1.1rem;
+    }
+
+    .priority-label {
+        font-size: 1.2rem;
+        width: 100px;
+    }
+
+    .priority {
+        font-size: 0.8rem;
+        height: 1rem;
+    }
+
+    .submit-button {
+        font-size: 0.8rem;
+        height: 2rem;
+    }
+
+    .selected {
+        outline: solid 4px #6535f5;
+        outline-offset: -4px;
+    }
+
+
+    /*
+    --------------------
+    --- EDIT OVERLAY ---
+    --------------------
+    */
+    .edit-overlay {
+        width: 680px;
+        height: 320px;
+    }
+
+    .edit-exit-icon {
+        margin: 0;
+        transform: scale(0.6);
+        height: 2.8rem;
+    }
+
+
+    /*
+    -----------------------
+    --- DETAILS OVERLAY ---
+    -----------------------
+    */
+    .details-overlay {
+        width: 430px;
+        height: 165px;
+        padding: 0.5rem;
+    }
+
+    .details-close-icon {
+        margin: 0 0 0 auto;
+        transform: scale(0.6);
+        height: 2.2rem;
+    }
+
+    .details-header {
+        font-size: 1.4rem;
+        padding: 0.3rem 0.3rem 0 0;
+    }
+
+    .details-title {
+        margin: 0.5rem;
+    }
+
+    .details-label {
+        font-size: 1rem;
+        font-weight: bold;
+        width: 80px;
+        margin-left: 0.5rem;
+    }
+
+    .details-text {
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+
+    /*
+    -------------------
+    --- ADD OVERLAY ---
+    -------------------
+    */
+    .overlay-header {
+        padding: 0.5rem;
+        padding: 0.6rem 0.4rem 2rem 1rem;
+        font-size: 1.6rem;
+        height: 0.8rem;
+    }
+
+    .add-exit-icon {
+        transform: scale(0.7);
+    }
+
+    .add-overlay {
+        width: 450px;
+        height: 335px;
+    }
+
+    .title-input {
+        font-size: 1rem;
+        margin: 0.5rem 0.5rem 0 0.5rem;
+        height: 1.4rem;
+    }
+
+    .details-input {
+        margin: 0.5rem 0.5rem 0 0.5rem;
+        font-size: 1rem;
+        height: 10rem;
+    }
+
+    .bottom-row-container {
+        margin: 0.6rem;
+    }
+
+    .date-label {
+        font-size: 0.8rem;
+        width: 70px;
+    }
+
+    .date-input {
+        height: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .priority-label {
+        font-size: 0.8rem;
+        width: 70px;
+    }
+
+    .priority {
+        font-weight: bold;
+        padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+        font-size: 0.5rem;
+        height: 0.7rem;
+    }
+
+    .submit-button {
+        font-weight: 500;
+        padding: 0.3rem;
+        font-size: 0.6rem;
+        height: 1.4rem;
+    }
+
+    .selected {
+        outline: solid 3px #6535f5;
+        outline-offset: -3px;
+    }
+
+
+    /*
+    --------------------
+    --- EDIT OVERLAY ---
+    --------------------
+    */
+    .edit-overlay {
+        width: 450px;
+        height: 275px;
+    }
+
+    .edit-exit-icon {
+        margin-top: 0.3rem;
+        transform: scale(0.4);
+        height: 1.4rem;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    /*
+    -------------------
+    --- ADD OVERLAY ---
+    -------------------
+    */
+    .overlay-header {
+        font-size: 1.6rem;
+    }
+
+    .add-exit-icon {
+        transform: scale(0.6);
+    }
+
+    .add-overlay {
+        width: 400px;
+        height: 290px;
+    }
+
+    .details-input {
+        height: 7rem;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+
+    /*
+    -------------------
+    --- ADD OVERLAY ---
+    -------------------
+    */
+    .overlay-header {
+        padding: 0.5rem;
+        padding: 0.6rem 0.4rem 2rem 1rem;
+        font-size: 1.2rem;
+        height: 0;
+    }
+
+    .add-exit-icon {
+        transform: scale(0.45);
+    }
+
+    .add-overlay {
+        width: 355px;
+        height: 210px;
+    }
+
+    .title-input {
+        font-size: 0.6rem;
+        height: 1.4rem;
+    }
+
+    .details-input {
+        margin: 0.5rem 0.5rem 0 0.5rem;
+        font-size: 0.6rem;
+        height: 10rem;
+    }
+
+    .bottom-row-container {
+        margin: 0.6rem;
+    }
+
+    .date-label {
+        font-size: 0.8rem;
+        width: 70px;
+    }
+
+    .date-input {
+        height: 1rem;
+        width: 6.4rem;
+        font-size: 0.6rem;
+    }
+
+    .priority-label {
+        font-size: 0.8rem;
+        width: 70px;
+    }
+
+    .priority {
+        font-weight: bold;
+        font-size: 0.45rem;
+        height: 0.7rem;
+    }
+
+    .submit-button {
+        font-weight: 500;
+        padding: 0.3rem;
+        font-size: 0.6rem;
+        height: 1.2rem;
+    }
+
+    .selected {
+        outline: solid 3px #6535f5;
+        outline-offset: -3px;
+    }
+
+
+    /*
+    --------------------
+    --- EDIT OVERLAY ---
+    --------------------
+    */
+    .edit-overlay {
+        width: 330px;
+        height: 175px;
+    }
+
+    .title-input {
+        font-size: 0.7rem;
+    }
+
+    .details-input {
+        height: 50px;
+    }
+
+    .edit-exit-icon {
+        margin-top: 0.3rem;
+        transform: scale(0.4);
+        height: 1.4rem;
+    }
+
+
+
+    /*
+    -----------------------
+    --- DETAILS OVERLAY ---
+    -----------------------
+    */
+    .details-overlay {
+        width: 300px;
+    }
+
+    .details-close-icon {
+        transform: scale(0.4);
+        height: 1.8rem;
+    }
+
+    .details-header {
+        padding: 0;
+    }
+
+    .details-title {
+        margin: 0.2rem 0.2rem 0.2rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .details-label {
+        font-size: 0.8rem;
+        font-weight: bold;
+        width: 60px;
+        margin-left: 0.5rem;
+    }
+
+    .details-text {
+        font-size: 0.72rem;
+        margin-left: 0.5rem;
+    }
+}
