@@ -4,11 +4,11 @@ import "../styles/Overlay.css"
 import { OlayContext } from "../context/OverlayContext"
 import { useContext } from "react"
 
-const AddOverlay = ({ newTodo, setNewTodo, createNewTodo, olayClasses, setOlayClasses }) => {
+const AddOverlay = ({ newTodo, setNewTodo, createNewTodo }) => {
     const titleMaxLength = 30;
     const detailsMaxLength = 200;
 
-    const { addVisible, setAddVisible } = useContext(OlayContext)
+    const { addVisible, setAddVisible, olayClasses, setOlayClasses } = useContext(OlayContext)
 
     const select = (label) => {
         switch (label) {

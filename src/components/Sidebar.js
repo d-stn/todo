@@ -3,8 +3,8 @@ import "../styles/overlays/Animations.css"
 import { OlayContext } from "../context/OverlayContext"
 import { useContext } from "react"
 
-const Sidebar = ({ content, setContent, home, today, week, setOlayClasses }) => {
-    const { setAddVisible } = useContext(OlayContext)
+const Sidebar = ({ content, setContent, home, today, week, }) => {
+    const { setAddVisible, setOlayClasses } = useContext(OlayContext)
 
     return (
         <div className="sidebar-container hidden" id="sidebar-container">

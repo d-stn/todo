@@ -3,8 +3,8 @@ import ExitIcon from "../styles/icons/ExitIcon"
 import { OlayContext } from "../context/OverlayContext"
 import { useContext } from "react"
 
-const DetailsOverlay = ({ details, olayClasses, setOlayClasses }) => {
-    const { detailsVisible, setDetailsVisible } = useContext(OlayContext)
+const DetailsOverlay = ({ details }) => {
+    const { detailsVisible, setDetailsVisible, olayClasses, setOlayClasses } = useContext(OlayContext)
 
     if (detailsVisible) {
         return (

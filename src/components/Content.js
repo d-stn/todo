@@ -4,9 +4,9 @@ import Todo from "./Todo"
 import { OlayContext } from "../context/OverlayContext"
 import { useContext } from "react"
 
-const Content = ({ todos, content, setDetails, setOlayClasses }) => {
+const Content = ({ todos, content, setDetails }) => {
 
-    const { setDetailsVisible, setEditVisible } = useContext(OlayContext)
+    const { setDetailsVisible, setEditVisible, setOlayClasses } = useContext(OlayContext)
 
     const createTodos = (type) => {
         return (

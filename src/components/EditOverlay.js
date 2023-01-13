@@ -3,10 +3,10 @@ import ExitIcon from "../styles/icons/ExitIcon"
 import { OlayContext } from "../context/OverlayContext"
 import { useContext } from "react"
 
-const EditOverlay = ({ olayClasses, setOlayClasses, details, setDetails, submitEdit }) => {
+const EditOverlay = ({ details, setDetails, submitEdit }) => {
     const titleMaxLength = 30;
     const detailsMaxLength = 200;
-    const { editVisible, setEditVisible } = useContext(OlayContext)
+    const { editVisible, setEditVisible, olayClasses, setOlayClasses } = useContext(OlayContext)
 
     const select = (label) => {
         switch (label) {

@@ -122,8 +122,6 @@ textarea {
     color: white;
 }
 
-
-
 .selected {
     outline: solid 5px #6535f5;
     outline-offset: -5px;

@@ -6,7 +6,7 @@ export const OlayContextProvider = ({ children }) => {
     const [addVisible, setAddVisible] = useState(false)
     const [detailsVisible, setDetailsVisible] = useState(false)
     const [editVisible, setEditVisible] = useState(false)
-    
+    const [olayClasses, setOlayClasses] = useState(null)
 
     return (
         <OlayContext.Provider value={{
@@ -16,7 +16,8 @@ export const OlayContextProvider = ({ children }) => {
             setDetailsVisible,
             editVisible,
             setEditVisible,
-
+            olayClasses,
+            setOlayClasses
         }}>
             {children}
         </OlayContext.Provider>

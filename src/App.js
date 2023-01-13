@@ -25,7 +25,6 @@ function App() {
     }
 
     const [content, setContent] = useState("home")
-    const [olayClasses, setOlayClasses] = useState(null)
 
     const [newTodo, setNewTodo] = useState(null)
     const [details, setDetails] = useState(null)
@@ -51,12 +50,12 @@ function App() {
         todos.edit(id, newItem)
     }
 
-    const showSidebar = (event) => {
+    const showSidebar = () => {
         document.getElementById("sidebar-container").className = "sidebar-container"
         setSidebarVisible(true)
     }
 
-    const hideSidebar = (event) => {
+    const hideSidebar = () => {
         document.getElementById("sidebar-container").className = "sidebar-container hidden"
         setSidebarVisible(false)
     }
@@ -67,26 +66,12 @@ function App() {
                 newTodo={newTodo}
                 setNewTodo={setNewTodo}
                 createNewTodo={createNewTodo}
-
-
-                olayClasses={olayClasses}
-                setOlayClasses={setOlayClasses}
             />
-            <DetailsOverlay
-                details={details}
-
-
-                olayClasses={olayClasses}
-                setOlayClasses={setOlayClasses}
-            />
+            <DetailsOverlay details={details} />
             <EditOverlay
                 details={details}
                 setDetails={setDetails}
                 submitEdit={submitEdit}
-
-
-                olayClasses={olayClasses}
-                setOlayClasses={setOlayClasses}
             />
             <Container>
                 <Header title={"TO - DO"}>
@@ -108,17 +93,11 @@ function App() {
                     home={todos.getCategory("home")}
                     today={todos.getCategory("today")}
                     week={todos.getCategory("week")}
-
-
-                    setOlayClasses={setOlayClasses}
                 />
                 <Content
                     content={content}
                     todos={todos}
                     setDetails={setDetails}
-
-
-                    setOlayClasses={setOlayClasses}
                 />
             </Container>
         </div>
