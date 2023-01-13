@@ -1,7 +1,13 @@
 import "../styles/Content.css"
 import Todo from "./Todo"
 
-const Content = ({ todos, content, setDetailsVisible, setDetails, setOlayClasses, setEditVisible }) => {
+import { OlayContext } from "../context/OverlayContext"
+import { useContext } from "react"
+
+const Content = ({ todos, content, setDetails, setOlayClasses }) => {
+
+    const { setDetailsVisible, setEditVisible } = useContext(OlayContext)
+
     const createTodos = (type) => {
         return (
             <div className="content-container">

@@ -1,9 +1,12 @@
 import "../styles/Overlay.css"
 import ExitIcon from "../styles/icons/ExitIcon"
+import { OlayContext } from "../context/OverlayContext"
+import { useContext } from "react"
 
-const EditOverlay = ({ visible, setVisible, olayClasses, setOlayClasses, details, setDetails, submitEdit }) => {
+const EditOverlay = ({ olayClasses, setOlayClasses, details, setDetails, submitEdit }) => {
     const titleMaxLength = 30;
     const detailsMaxLength = 200;
+    const { editVisible, setEditVisible } = useContext(OlayContext)
 
     const select = (label) => {
         switch (label) {
@@ -27,7 +30,7 @@ const EditOverlay = ({ visible, setVisible, olayClasses, setOlayClasses, details
         }
     }
 
-    if (visible) {
+    if (editVisible) {
         return (
             <div className={`overlay-container ${olayClasses[0]}`}>
                 <div className={`edit-overlay ${olayClasses[1]}`}>
@@ -37,7 +40,7 @@ const EditOverlay = ({ visible, setVisible, olayClasses, setOlayClasses, details
                             submitEdit(details.id, details)
                             setOlayClasses(["unblur-animation", "disappear-animation"])
                             setTimeout(() => {
-                                setVisible(false)
+                                setEditVisible(false)
                             }, 200)
                         }}
                     >
@@ -54,7 +57,7 @@ const EditOverlay = ({ visible, setVisible, olayClasses, setOlayClasses, details
                                 onClick={() => {
                                     setOlayClasses(["unblur-animation", "disappear-animation"])
                                     setTimeout(() => {
-                                        setVisible(false)
+                                        setEditVisible(false)
                                     }, 200)
                                 }}
                             />

@@ -25,10 +25,6 @@ function App() {
     }
 
     const [content, setContent] = useState("home")
-
-    const [addVisible, setAddVisible] = useState(false)
-    const [detailsVisible, setDetailsVisible] = useState(false)
-    const [editVisible, setEditVisible] = useState(false)
     const [olayClasses, setOlayClasses] = useState(null)
 
     const [newTodo, setNewTodo] = useState(null)
@@ -68,18 +64,18 @@ function App() {
     return (
         <div className="main-container">
             <AddOverlay
-                visible={addVisible}
-                setVisible={setAddVisible}
-                olayClasses={olayClasses}
-                setOlayClasses={setOlayClasses}
                 newTodo={newTodo}
                 setNewTodo={setNewTodo}
                 createNewTodo={createNewTodo}
+
+
+                olayClasses={olayClasses}
+                setOlayClasses={setOlayClasses}
             />
             <DetailsOverlay
                 details={details}
-                visible={detailsVisible}
-                setVisible={setDetailsVisible}
+
+
                 olayClasses={olayClasses}
                 setOlayClasses={setOlayClasses}
             />
@@ -87,8 +83,8 @@ function App() {
                 details={details}
                 setDetails={setDetails}
                 submitEdit={submitEdit}
-                visible={editVisible}
-                setVisible={setEditVisible}
+
+
                 olayClasses={olayClasses}
                 setOlayClasses={setOlayClasses}
             />
@@ -109,18 +105,19 @@ function App() {
                 <Sidebar
                     content={content}
                     setContent={setContent}
-                    setAddVisible={setAddVisible}
-                    setOlayClasses={setOlayClasses}
                     home={todos.getCategory("home")}
                     today={todos.getCategory("today")}
                     week={todos.getCategory("week")}
+
+
+                    setOlayClasses={setOlayClasses}
                 />
                 <Content
                     content={content}
                     todos={todos}
-                    setDetailsVisible={setDetailsVisible}
                     setDetails={setDetails}
-                    setEditVisible={setEditVisible}
+
+
                     setOlayClasses={setOlayClasses}
                 />
             </Container>

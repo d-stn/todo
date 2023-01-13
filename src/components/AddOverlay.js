@@ -1,10 +1,14 @@
 import Header from "./Header"
 import ExitIcon from "../styles/icons/ExitIcon"
 import "../styles/Overlay.css"
+import { OlayContext } from "../context/OverlayContext"
+import { useContext } from "react"
 
-const AddOverlay = ({ newTodo, setNewTodo, createNewTodo, visible, setVisible, olayClasses, setOlayClasses }) => {
+const AddOverlay = ({ newTodo, setNewTodo, createNewTodo, olayClasses, setOlayClasses }) => {
     const titleMaxLength = 30;
     const detailsMaxLength = 200;
+
+    const { addVisible, setAddVisible } = useContext(OlayContext)
 
     const select = (label) => {
         switch (label) {
@@ -28,7 +32,7 @@ const AddOverlay = ({ newTodo, setNewTodo, createNewTodo, visible, setVisible, o
         }
     }
 
-    if (visible) {
+    if (addVisible) {
         return (
             <div className={`overlay-container ${olayClasses[0]}`}>
                 <form
@@ -37,7 +41,7 @@ const AddOverlay = ({ newTodo, setNewTodo, createNewTodo, visible, setVisible, o
                         createNewTodo()
                         setOlayClasses(["unblur-animation", "disappear-animation"])
                         setTimeout(() => {
-                            setVisible(false)
+                            setAddVisible(false)
                         }, 200)
                     }}
                     className={`add-overlay ${olayClasses[1]}`}>
@@ -47,7 +51,7 @@ const AddOverlay = ({ newTodo, setNewTodo, createNewTodo, visible, setVisible, o
                             onClick={() => {
                                 setOlayClasses(["unblur-animation", "disappear-animation"])
                                 setTimeout(() => {
-                                    setVisible(false)
+                                    setAddVisible(false)
                                 }, 200)
                             }}
                         />

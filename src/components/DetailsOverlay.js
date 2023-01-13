@@ -1,8 +1,12 @@
 import "../styles/Overlay.css"
 import ExitIcon from "../styles/icons/ExitIcon"
+import { OlayContext } from "../context/OverlayContext"
+import { useContext } from "react"
 
-const DetailsOverlay = ({ visible, setVisible, details, olayClasses, setOlayClasses }) => {
-    if (visible) {
+const DetailsOverlay = ({ details, olayClasses, setOlayClasses }) => {
+    const { detailsVisible, setDetailsVisible } = useContext(OlayContext)
+
+    if (detailsVisible) {
         return (
             <div className={`overlay-container ${olayClasses[0]}`}>
                 <div className={`details-overlay ${olayClasses[1]}`}>
@@ -14,7 +18,7 @@ const DetailsOverlay = ({ visible, setVisible, details, olayClasses, setOlayClas
                             onClick={() => {
                                 setOlayClasses(["unblur-animation", "disappear-animation"])
                                 setTimeout(() => {
-                                    setVisible(false)
+                                    setDetailsVisible(false)
                                 }, 200)
                             }}
                         />
